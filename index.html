@@ -90,10 +90,9 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 4px 0 12px -4px rgba(115, 87, 26, 0.08);
-            max-width: 130px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            max-width: 140px;
+            white-space: normal; /* Allow text to wrap onto the next line */
+            word-break: break-word; /* Break long words if necessary */
         }
 
         /* Adjust sticky header backgrounds */
@@ -297,7 +296,7 @@
                     html += `
                         <tr class="glass-row">
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center sticky-col-rank">${rankBadge}</td>
-                            <td class="py-3 px-3 sm:py-4 sm:px-4 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base sticky-col-name" title="${item.name}">${item.name}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base sticky-col-name">${item.name}</td>
                             <td class="py-3 px-4 sm:py-4 sm:px-6 text-slate-700 font-medium text-xs sm:text-sm">${item.wing}</td>
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class1}</td>
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class2}</td>
