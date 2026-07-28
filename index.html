@@ -73,6 +73,29 @@
             box-shadow: 0 10px 25px rgba(217, 180, 74, 0.1);
         }
 
+        /* Sticky/Frozen Column Styling */
+        .sticky-col-rank {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .sticky-col-name {
+            position: sticky;
+            left: 80px; /* Adjust based on rank column width */
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 4px 0 12px -4px rgba(115, 87, 26, 0.08);
+        }
+
+        /* Adjust sticky header backgrounds */
+        thead .sticky-col-rank, thead .sticky-col-name {
+            background: rgba(254, 243, 199, 0.9); /* matches bg-amber-100/40 approx */
+        }
+
         @keyframes goldShimmer {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
@@ -116,7 +139,7 @@
                     <img src="https://github.com/fayizsalam/QHLS_Quiz_Results/blob/main/QHLS_LOGO_CHUNKAM_UNIT.png?raw=true" 
                          onerror="this.style.display='none'" 
                          alt="QHLS Logo" 
-                         class="relative h-[200px] sm:h-[240px] md:h-[280px] w-auto object-contain drop-shadow-[0_15px_25px_rgba(115,87,26,0.12)]">
+                         class="relative h-[200px] sm:h-[240px] md:h-[280px] w-700px object-contain drop-shadow-[0_15px_25px_rgba(115,87,26,0.12)]">
                 </div>
                 
                 <h1 class="text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-slate-500 mb-3 font-title">Weekly Online Quiz Results</h1>
@@ -140,11 +163,11 @@
 
             <div class="glass-panel rounded-[24px] sm:rounded-[32px] overflow-hidden max-w-4xl mx-auto shadow-[0_20px_50px_rgba(115,87,26,0.08)] border border-amber-500/20">
                 <div class="overflow-x-auto w-full">
-                    <table class="w-full text-left border-collapse min-w-[650px] sm:min-w-full">
+                    <table class="w-full text-left border-collapse min-w-[700px]">
                         <thead>
                             <tr class="border-b border-amber-500/20 bg-amber-100/40 text-slate-600 uppercase text-xs sm:text-sm tracking-widest font-semibold">
-                                <th class="py-4 px-4 sm:py-5 sm:px-5 text-center w-16">Rank</th>
-                                <th class="py-4 px-4 sm:py-5 sm:px-6">Name</th>
+                                <th class="py-4 px-4 sm:py-5 sm:px-5 text-center w-20 sticky-col-rank">Rank</th>
+                                <th class="py-4 px-4 sm:py-5 sm:px-6 sticky-col-name min-w-[180px]">Name</th>
                                 <th class="py-4 px-4 sm:py-5 sm:px-6">Wing</th>
                                 <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 1</th>
                                 <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 2</th>
@@ -261,15 +284,15 @@
                     } else if(index === 1) {
                         rankBadge = `<span class="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-200 text-slate-700 font-bold border border-slate-300 shadow-sm text-sm sm:text-base">#2</span>`;
                     } else if(index === 2) {
-                        rankBadge = `<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 text-orange-900 font-bold border border-orange-300 shadow-sm text-sm sm:text-base">#3</span>`;
+                        rankBadge = `<span class="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-orange-100 text-orange-900 font-bold border border-orange-300 shadow-sm text-sm sm:text-base">#3</span>`;
                     } else {
                         rankBadge = `<span class="font-bold text-slate-600 text-sm sm:text-base">#${index + 1}</span>`;
                     }
 
                     html += `
                         <tr class="glass-row">
-                            <td class="py-3 px-4 sm:py-4 sm:px-5 text-center">${rankBadge}</td>
-                            <td class="py-3 px-4 sm:py-4 sm:px-6 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base">${item.name}</td>
+                            <td class="py-3 px-4 sm:py-4 sm:px-5 text-center sticky-col-rank">${rankBadge}</td>
+                            <td class="py-3 px-4 sm:py-4 sm:px-6 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base sticky-col-name min-w-[180px]">${item.name}</td>
                             <td class="py-3 px-4 sm:py-4 sm:px-6 text-slate-700 font-medium text-xs sm:text-sm">${item.wing}</td>
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class1}</td>
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class2}</td>
