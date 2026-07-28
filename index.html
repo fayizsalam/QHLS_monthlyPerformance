@@ -142,7 +142,7 @@
                 <div class="overflow-x-auto w-full">
                     <table class="w-full text-left border-collapse min-w-[650px] sm:min-w-full">
                         <thead>
-                            <tr class="border-b border-amber-500/20 bg-amber-100/40 text-slate-600 uppercase text-[11px] tracking-widest font-semibold">
+                            <tr class="border-b border-amber-500/20 bg-amber-100/40 text-slate-600 uppercase text-xs sm:text-sm tracking-widest font-semibold">
                                 <th class="py-4 px-4 sm:py-5 sm:px-5 text-center w-16">Rank</th>
                                 <th class="py-4 px-4 sm:py-5 sm:px-6">Name</th>
                                 <th class="py-4 px-4 sm:py-5 sm:px-6">Wing</th>
@@ -153,7 +153,7 @@
                                 <th class="py-4 px-4 sm:py-5 sm:px-6 text-center text-amber-800 font-bold">Total</th>
                             </tr>
                         </thead>
-                        <tbody id="resultsTableBody" class="divide-y divide-amber-900/5 text-xs sm:text-sm">
+                        <tbody id="resultsTableBody" class="divide-y divide-amber-900/5 text-sm sm:text-base">
                             <tr>
                                 <td colspan="8" class="p-16 text-center">
                                     <div class="flex flex-col items-center justify-center gap-4">
@@ -257,25 +257,25 @@
                 results.forEach((item, index) => {
                     let rankBadge = '';
                     if(index === 0) {
-                        rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-amber-100 text-amber-800 font-bold border border-amber-300 shadow-sm text-xs sm:text-sm">#1</span>`;
+                        rankBadge = `<span class="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-100 text-amber-800 font-bold border border-amber-300 shadow-sm text-sm sm:text-base">#1</span>`;
                     } else if(index === 1) {
-                        rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-200 text-slate-700 font-bold border border-slate-300 shadow-sm text-xs sm:text-sm">#2</span>`;
+                        rankBadge = `<span class="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-200 text-slate-700 font-bold border border-slate-300 shadow-sm text-sm sm:text-base">#2</span>`;
                     } else if(index === 2) {
-                        rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-orange-100 text-orange-900 font-bold border border-orange-300 shadow-sm text-xs sm:text-sm">#3</span>`;
+                        rankBadge = `<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 text-orange-900 font-bold border border-orange-300 shadow-sm text-sm sm:text-base">#3</span>`;
                     } else {
-                        rankBadge = `<span class="font-semibold text-slate-500 text-xs sm:text-sm">#${index + 1}</span>`;
+                        rankBadge = `<span class="font-bold text-slate-600 text-sm sm:text-base">#${index + 1}</span>`;
                     }
 
                     html += `
                         <tr class="glass-row">
                             <td class="py-3 px-4 sm:py-4 sm:px-5 text-center">${rankBadge}</td>
-                            <td class="py-3 px-4 sm:py-4 sm:px-6 font-extrabold text-slate-900 tracking-wide">${item.name}</td>
-                            <td class="py-3 px-4 sm:py-4 sm:px-6 text-slate-600 font-small text-xs sm:text-sm">${item.wing}</td>
-                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-600 font-medium">${item.class1}</td>
-                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-600 font-medium">${item.class2}</td>
-                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-600 font-medium">${item.class3}</td>
-                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-600 font-medium">${item.class4}</td>
-                            <td class="py-3 px-4 sm:py-4 sm:px-6 text-center font-extrabold text-amber-800 text-sm sm:text-base">${item.TotScore}</td>
+                            <td class="py-3 px-4 sm:py-4 sm:px-6 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base">${item.name}</td>
+                            <td class="py-3 px-4 sm:py-4 sm:px-6 text-slate-700 font-medium text-xs sm:text-sm">${item.wing}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class1}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class2}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class3}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class4}</td>
+                            <td class="py-3 px-4 sm:py-4 sm:px-6 text-center font-extrabold text-amber-800 text-base sm:text-lg">${item.TotScore}</td>
                         </tr>
                     `;
                 });
