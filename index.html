@@ -80,15 +80,20 @@
             z-index: 10;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            width: 70px;
         }
 
         .sticky-col-name {
             position: sticky;
-            left: 80px; /* Adjust based on rank column width */
+            left: 70px; /* Matches rank column width */
             z-index: 10;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 4px 0 12px -4px rgba(115, 87, 26, 0.08);
+            max-width: 130px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Adjust sticky header backgrounds */
@@ -163,11 +168,11 @@
 
             <div class="glass-panel rounded-[24px] sm:rounded-[32px] overflow-hidden max-w-4xl mx-auto shadow-[0_20px_50px_rgba(115,87,26,0.08)] border border-amber-500/20">
                 <div class="overflow-x-auto w-full">
-                    <table class="w-full text-left border-collapse min-w-[700px]">
+                    <table class="w-full text-left border-collapse min-w-[650px]">
                         <thead>
                             <tr class="border-b border-amber-500/20 bg-amber-100/40 text-slate-600 uppercase text-xs sm:text-sm tracking-widest font-semibold">
-                                <th class="py-4 px-4 sm:py-5 sm:px-5 text-center w-20 sticky-col-rank min-w-[15px]">Rank</th>
-                                <th class="py-4 px-4 sm:py-5 sm:px-6 sticky-col-name min-w-[50px]">Name</th>
+                                <th class="py-4 px-3 sm:py-5 sm:px-4 text-center sticky-col-rank">Rank</th>
+                                <th class="py-4 px-3 sm:py-5 sm:px-4 sticky-col-name">Name</th>
                                 <th class="py-4 px-4 sm:py-5 sm:px-6">Wing</th>
                                 <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 1</th>
                                 <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 2</th>
@@ -291,8 +296,8 @@
 
                     html += `
                         <tr class="glass-row">
-                            <td class="py-3 px-4 sm:py-4 sm:px-5 text-center sticky-col-rank min-w-[15px]">${rankBadge}</td>
-                            <td class="py-3 px-4 sm:py-4 sm:px-6 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base sticky-col-name min-w-[50px]">${item.name}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 text-center sticky-col-rank">${rankBadge}</td>
+                            <td class="py-3 px-3 sm:py-4 sm:px-4 font-extrabold text-slate-900 tracking-wide text-sm sm:text-base sticky-col-name" title="${item.name}">${item.name}</td>
                             <td class="py-3 px-4 sm:py-4 sm:px-6 text-slate-700 font-medium text-xs sm:text-sm">${item.wing}</td>
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class1}</td>
                             <td class="py-3 px-3 sm:py-4 sm:px-4 text-center text-slate-700 font-medium text-sm sm:text-base">${item.class2}</td>
