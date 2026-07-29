@@ -73,31 +73,6 @@
             box-shadow: 0 10px 25px rgba(217, 180, 74, 0.1);
         }
 
-        .sticky-col-rank {
-            position: sticky;
-            left: 0;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            width: 70px;
-        }
-
-        .sticky-col-name {
-            position: sticky;
-            left: 70px;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 4px 0 12px -4px rgba(115, 87, 26, 0.08);
-            max-width: 140px;
-            white-space: normal;
-            word-break: break-word;
-        }
-
-        thead .sticky-col-rank, thead .sticky-col-name {
-            background: rgba(254, 243, 199, 0.9);
-        }
-
         @keyframes goldShimmer {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
@@ -182,8 +157,8 @@
                         <table class="w-full text-left border-collapse min-w-[650px]">
                             <thead>
                                 <tr class="border-b border-amber-500/20 bg-amber-100/40 text-slate-600 uppercase text-xs sm:text-sm tracking-widest font-semibold">
-                                    <th class="py-4 px-3 sm:py-5 sm:px-4 text-center sticky-col-rank">Rank</th>
-                                    <th class="py-4 px-3 sm:py-5 sm:px-4 sticky-col-name">Name</th>
+                                    <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Rank</th>
+                                    <th class="py-4 px-3 sm:py-5 sm:px-4">Name</th>
                                     <th class="py-4 px-4 sm:py-5 sm:px-6">Wing</th>
                                     <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 1</th>
                                     <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 2</th>
@@ -305,11 +280,13 @@
                     if (rank === 1) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-400 text-slate-900 font-bold shadow-sm">1</span>`;
                     else if (rank === 2) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-300 text-slate-800 font-bold shadow-sm">2</span>`;
                     else if (rank === 3) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-700 text-white font-bold shadow-sm">3</span>`;
+                    else if (rank === 4) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-700 text-white font-bold shadow-sm">4</span>`;
+                    else if (rank === 5) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-700 text-white font-bold shadow-sm">5</span>`;
 
                     tableHTML += `
                         <tr class="glass-row">
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center sticky-col-rank">${rankBadge}</td>
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 font-semibold text-slate-900 sticky-col-name">${item.name}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center">${rankBadge}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 font-semibold text-slate-900">${item.name}</td>
                             <td class="py-4 px-4 sm:py-4 sm:px-6 text-slate-600">${item.wing}</td>
                             <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class1}</td>
                             <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class2}</td>
