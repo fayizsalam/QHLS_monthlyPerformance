@@ -164,6 +164,7 @@
                                     <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 2</th>
                                     <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 3</th>
                                     <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 4</th>
+                                    <th class="py-4 px-3 sm:py-5 sm:px-4 text-center">Class 5</th>
                                     <th class="py-4 px-4 sm:py-5 sm:px-6 text-center text-amber-800 font-bold">Total</th>
                                 </tr>
                             </thead>
@@ -263,7 +264,8 @@
                         class2: cols[4],
                         class3: cols[5],
                         class4: cols[6],
-                        total: parseFloat(cols[7]) || 0
+                        class5: cols[7],
+                        total: parseFloat(cols[8]) || 0
                     };
                 });
 
@@ -292,6 +294,7 @@
                             <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class2}</td>
                             <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class3}</td>
                             <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class4}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class5}</td>
                             <td class="py-4 px-4 sm:py-4 sm:px-6 text-center font-bold text-amber-800 text-lg">${item.total}</td>
                         </tr>
                     `;
@@ -329,6 +332,10 @@
                                 <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
                                     <span class="text-slate-400 block text-[10px]">C 4</span>
                                     <span class="font-semibold text-slate-700 text-sm">${item.class4}</span>
+                                </div>
+                                <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
+                                    <span class="text-slate-400 block text-[10px]">C 5</span>
+                                    <span class="font-semibold text-slate-700 text-sm">${item.class5}</span>
                                 </div>
                             </div>
                         </div>
