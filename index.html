@@ -260,11 +260,10 @@
                     return {
                         name: cols[0],
                         wing: cols[1],
-                        class1: cols[3],
-                        class2: cols[4],
-                        class3: cols[5],
-                        class4: cols[6],
-                        class5: cols[7],
+                        class6: cols[3],
+                        class7: cols[4],
+                        class8: cols[5],
+                        class9: cols[6],
                         total: parseFloat(cols[8]) || 0
                     };
                 });
@@ -290,11 +289,10 @@
                             <td class="py-4 px-3 sm:py-4 sm:px-4 text-center">${rankBadge}</td>
                             <td class="py-4 px-3 sm:py-4 sm:px-4 font-semibold text-slate-900">${item.name}</td>
                             <td class="py-4 px-4 sm:py-4 sm:px-6 text-slate-600">${item.wing}</td>
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class1}</td>
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class2}</td>
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class3}</td>
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class4}</td>
-                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class5}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class6}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class7}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class8}</td>
+                            <td class="py-4 px-3 sm:py-4 sm:px-4 text-center text-slate-700">${item.class9}</td>
                             <td class="py-4 px-4 sm:py-4 sm:px-6 text-center font-bold text-amber-800 text-lg">${item.total}</td>
                         </tr>
                     `;
@@ -319,23 +317,19 @@
                             <div class="grid grid-cols-4 gap-2 text-center pt-1 text-xs">
                                 <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
                                     <span class="text-slate-400 block text-[10px]">C 1</span>
-                                    <span class="font-semibold text-slate-700 text-sm">${item.class1}</span>
+                                    <span class="font-semibold text-slate-700 text-sm">${item.class6}</span>
                                 </div>
                                 <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
                                     <span class="text-slate-400 block text-[10px]">C 2</span>
-                                    <span class="font-semibold text-slate-700 text-sm">${item.class2}</span>
+                                    <span class="font-semibold text-slate-700 text-sm">${item.class7}</span>
                                 </div>
                                 <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
                                     <span class="text-slate-400 block text-[10px]">C 3</span>
-                                    <span class="font-semibold text-slate-700 text-sm">${item.class3}</span>
+                                    <span class="font-semibold text-slate-700 text-sm">${item.class8}</span>
                                 </div>
                                 <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
                                     <span class="text-slate-400 block text-[10px]">C 4</span>
-                                    <span class="font-semibold text-slate-700 text-sm">${item.class4}</span>
-                                </div>
-                                <div class="bg-white/60 p-2 rounded-xl border border-amber-500/10">
-                                    <span class="text-slate-400 block text-[10px]">C 5</span>
-                                    <span class="font-semibold text-slate-700 text-sm">${item.class5}</span>
+                                    <span class="font-semibold text-slate-700 text-sm">${item.class9}</span>
                                 </div>
                             </div>
                         </div>
